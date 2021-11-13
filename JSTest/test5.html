@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<HTML>
+    <head>
+        <style>
+            .change{
+                background-color: green;
+                color : white;
+            }
+            .reset{
+                background-color: white;
+                color : black;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="button1" onclick="tabs('1')" class="tab1" >tab 1</button>
+        <button id="button2" onclick="tabs('2')" class="tab2">tab 2</button>
+        <button id="button3" onclick="tabs('3')" class="tab3">tab 3</button>
+        <br>
+        <div id="tab1" name="tab"><h1>This is tab 1!</h1></div>
+        <div id="tab2" name="tab" style="display: none;"><h1>This is tab 2!</h1></div>
+        <div id="tab3" name="tab" style="display: none;"><h1>This is tab 3!</h1></div>
+    </body>
+    <script>
+        function tabs(a){
+            tab1 = document.getElementById('tab1');
+            tab2 = document.getElementById('tab2');
+            tab3 = document.getElementById('tab3');
+            tab1.style.display = "none";
+            tab2.style.display = "none";
+            tab3.style.display = "none";
+            document.getElementById('button1').className ="reset";
+            document.getElementById('button2').className ="reset";
+            document.getElementById('button3').className ="reset";
+            if (a==1){
+                document.getElementById('button1').className = "change";
+                tab1.style.display = "block";
+            }
+            else if (a==2){
+                document.getElementById('button2').className = "change";
+                tab2.style.display = "block";
+            }
+            else if (a==3){
+                document.getElementById('button3').className = "change";
+                tab3.style.display = "block";
+
+            }
+        }
+    </script>
+</HTML>
